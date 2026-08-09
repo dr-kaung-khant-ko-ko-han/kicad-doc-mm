@@ -1,105 +1,120 @@
-Windows Dependencies
+Windows Dependencies (Windows လိုအပ်ချက်များ)
 ====================
 
 == AsciiDoc
 
-To install AsciiDoc on windows, get the latest version from
-http://sourceforge.net/projects/asciidoc/[Sourceforge] and unzip somewhere on
-your drive. Make sure the asccidoc.py file is available in your path in order
-for CMake to be able to find it.
+Windows ပေါ်တွင် AsciiDoc ကို install လုပ်ရန်၊ http://sourceforge.net/projects/asciidoc/[Sourceforge]
+မှ နောက်ဆုံးထွက် version ကို ရယူပြီး သင်၏ drive ပေါ်ရှိ နေရာတစ်ခုတွင် unzip
+ဖြင့်ဖြည်ပါ။ CMake က ၎င်းကို ရှာတွေ့နိုင်ရန် asccidoc.py file ကို သင်၏ path
+တွင် ရရှိနိုင်ကြောင်း သေချာစေပါ။
 
-AsciiDoc cannot produce PDF output without a PDF generator which can be either
-dblatex or Apache FOP. On Windows we must satisfy the PDF generator dependency
-ourselves.
+AsciiDoc သည် dblatex သို့မဟုတ် Apache FOP ဖြစ်သည့် PDF generator မရှိဘဲ
+PDF output ကို ထုတ်လုပ်နိုင်မည် မဟုတ်ပါ။ Windows ပေါ်တွင် PDF generator
+dependency ကို ကျွန်ုပ်တို့ကိုယ်တိုင် ဖြည့်ဆည်းပေးရပါမည်။
 
-Details of how to install dblatex and FOP are included below.
+dblatex နှင့် FOP ကို install လုပ်နည်း အသေးစိတ်ကို အောက်တွင် ဖော်ပြထားပါသည်။
 
 == po4a
 
-po4a is a perl script and so requires PERL to be installed. If you're using a
-POSIX emulation layer with package management, grab the perl package.
+po4a သည် perl script တစ်ခုဖြစ်သောကြောင့် PERL install ထားရန် လိုအပ်ပါသည်။
+package management ပါဝင်သော POSIX emulation layer ကို အသုံးပြုနေပါက perl
+package ကို ရယူပါ။
 
-Outside of a POSIX emulation you'll need to grab PERL.
-http://www.activestate.com/activeperl/downloads[ActivePerl] is recommended.
+POSIX emulation မရှိပါက PERL ကို ရယူရန် လိုအပ်ပါမည်။
+http://www.activestate.com/activeperl/downloads[ActivePerl] ကို
+အကြံပြုပါသည်။
 
-Install the CPAN modules which are required by po4a. After installing perl,
-on the command line type:
+po4a အတွက် လိုအပ်သော CPAN module များကို install လုပ်ပါ။ perl ကို
+install ပြီးနောက် command line တွင် အောက်ပါအတိုင်း ရိုက်ထည့်ပါ-
 
     cpan Unicode::GCString
 
-Grab the latest po4a distribution from
-https://alioth.debian.org/frs/?group_id=30267[Alioth], decompress it somewhere
-on your harddrive and make sure the directory containing po4a is available in
-your PATH environment variable. CMake will be able to find po4a on Windows so
-long as Perl is working and po4a is in your path.
+https://alioth.debian.org/frs/?group_id=30267[Alioth] မှ po4a ၏ နောက်ဆုံးထွက်
+distribution ကို ရယူပြီး သင်၏ harddrive ပေါ်ရှိ နေရာတစ်ခုတွင် decompress
+ဖြည်ပါ။ po4a ပါရှိသော directory ကို သင်၏ PATH environment variable တွင်
+ရရှိနိုင်ကြောင်း သေချာစေပါ။ Perl အလုပ်လုပ်နေသ၍ နှင့် po4a သည် သင်၏ path
+ထဲတွင် ရှိနေသ၍ CMake သည် Windows ပေါ်တွင် po4a ကို ရှာတွေ့နိုင်ပါလိမ့်မည်။
 
-That's all there is to get po4a working on Windows; It's just used in-place.
+Windows ပေါ်တွင် po4a ကို အလုပ်လုပ်စေရန်အတွက် လိုအပ်သည်မှာ ဒါပါပဲ၊ ၎င်းကို
+in-place အနေဖြင့်ပဲ အသုံးပြုပါသည်။
 
-NOTE: Be careful with any other projects you may have because PERL installs a
-MinGW compiler which it uses to compile perl modules. Usually it puts this at
-the start of your path so this version of the MinGW compiler becomes your
-default compiler!
+NOTE: PERL သည် perl module များကို compile ရန် အသုံးပြုသည့် MinGW
+compiler တစ်ခုကို install လုပ်သောကြောင့် သင့်တွင် ရှိနိုင်သည့် အခြား
+project များနှင့် ပတ်သက်၍ သတိထားပါ။ များသောအားဖြင့် ၎င်းကို သင်၏ path
+၏ အစတွင် ထားလေ့ရှိသဖြင့် ဤ MinGW compiler version သည် သင်၏ default
+compiler ဖြစ်သွားနိုင်ပါသည်!
 
 == dblatex
 
-WARNING: Although dblatex support is provided for under Windows, it has only
-been unsuccessfully tested, failing due to a race condition with file
-permissions on successive xsltproc invocations. However, please do try it if
-you can because it will probably work one day!
+WARNING: Windows အောက်တွင် dblatex support ကို ပံ့ပိုးပေးထားသော်လည်း၊
+ဆက်တိုက် xsltproc invocation များတွင် file permission များနှင့် race
+condition ကြောင့် ကျရှုံးသဖြင့် စမ်းသပ်မှု အောင်မြင်ခဲ့ခြင်း မရှိသေးပါ။
+သို့ရာတွင် တစ်နေ့နေ့ အလုပ်ဖြစ်လာနိုင်ပါသဖြင့် တတ်နိုင်ပါက စမ်းကြည့်ပါ!
 
-http://dblatex.sourceforge.net/[dblatex] has experimental support in the
-project for PDF generation on Windows. However, it has not been proven to
-work so currently FOP is the only **supported** PDF generator on Windows.
+http://dblatex.sourceforge.net/[dblatex] တွင် Windows ပေါ်ရှိ PDF
+generation အတွက် project ၌ experimental support ရှိပါသည်။ သို့သော်
+အလုပ်ဖြစ်ကြောင်း သက်သေမပြနိုင်သေးသဖြင့် လက်ရှိအချိန်တွင် FOP သည်သာ
+Windows ပေါ်တွင် **support** ပြုထားသော PDF generator တစ်ခုတည်း
+ဖြစ်ပါသည်။
 
-In order for CMake to use DBLATEX, use the following when configuring with
-CMake:
+CMake ကို DBLATEX အသုံးပြုစေရန် CMake ဖြင့် configure လုပ်စဉ် အောက်ပါ
+အတိုင်း အသုံးပြုပါ-
 
     -DPDF_GENERATOR=DBLATEX
 
-dblatex is currently the default PDF generator anyway, so omitting the above
-will also work if you just want to build using the default tools (in future
-we may change to something else, like FOP for example)
+dblatex သည် လက်ရှိတွင် default PDF generator ဖြစ်နေသဖြင့်၊ default tool
+များကို အသုံးပြု၍ build လုပ်ရုံသာ လိုချင်ပါက အထက်ပါ option ကို
+ချန်ထားလျှင်လည်း အလုပ်ဖြစ်ပါလိမ့်မည် (နောင်တွင် ဥပမာ FOP ကဲ့သို့
+အခြားတစ်ခုသို့ ပြောင်းလဲနိုင်ပါသည်)
 
-Make sure you have the latest version of python 2 installed.
+python 2 ၏ နောက်ဆုံးထွက် version ကို install ထားကြောင်း သေချာစေပါ။
 
-Download and install http://miktex.org/download[MikTex] which provides the
-latex backend for dblatex. It's recommended during install to set the "Install
-packages on the fly" to yes so MikTex doesn't have to ask before installing
-packages - it's a real pain when installing dblatex otherwise!! It also
-appears that if you miss that setting dblatex will fail to install because of
-some crashes of MikTex which then reports missing elements in the toolchain.
+dblatex အတွက် latex backend ကို ပံ့ပိုးပေးသည့် http://miktex.org/download[MikTex]
+ကို download လုပ်ပြီး install လုပ်ပါ။ install လုပ်စဉ် "Install packages
+on the fly" ကို yes ဟု သတ်မှတ်ရန် အကြံပြုပါသည်၊ သို့မှသာ MikTex သည်
+package များ install မလုပ်မီ မေးမြန်းစရာ မလိုတော့ပါ - မဟုတ်ပါက dblatex
+install လုပ်ရာတွင် အလွန်စိတ်အနှောင့်အယှက် ဖြစ်စေပါသည်!! ထိုသတ်မှတ်ချက်ကို
+လွတ်သွားပါက MikTex crash ဖြစ်မှုအချို့ကြောင့် dblatex install
+မအောင်မြင်တတ်ပြီး toolchain တွင် element များ ပျောက်ဆုံးနေကြောင်း
+report တက်တတ်ပါသည်။
 
-Download and install http://zlatkovic.com/libxml/[libxml2] which is pain.
-You'll need to download and decompress all the zip files. Then, manually copy
-each of the folders into a common directory so that you end up with one bin
-directory and one lib directory, etc. You must then make sure the bin path of
-your installation directory is added to your PATH environment variable.
+အနှောင့်အယှက်ဖြစ်စေတတ်သော http://zlatkovic.com/libxml/[libxml2] ကို
+download လုပ်ပြီး install လုပ်ပါ။ zip file အားလုံးကို download လုပ်ပြီး
+decompress ဖြည်ရန် လိုအပ်ပါသည်။ ထို့နောက် folder တစ်ခုစီကို bin
+directory တစ်ခုနှင့် lib directory တစ်ခု စသည်ဖြင့် ရရှိအောင် common
+directory တစ်ခုထဲသို့ လက်ဖြင့် ကူးထည့်ပါ။ ထို့နောက် သင်၏ installation
+directory ၏ bin path ကို သင်၏ PATH environment variable တွင် ထည့်သွင်း
+ထားကြောင်း သေချာစေရပါမည်။
 
-Then download the latest dblatex .tar.bz2 from
-https://sourceforge.net/projects/dblatex/[Sourceforge]
+ထို့နောက် https://sourceforge.net/projects/dblatex/[Sourceforge] မှ
+dblatex ၏ နောက်ဆုံးထွက် .tar.bz2 ကို download လုပ်ပါ
 
-Decompress the tar.bz2 somewhere and then install dbltatex:
+tar.bz2 ကို နေရာတစ်ခုတွင် decompress ဖြည်ပြီး dblatex ကို အောက်ပါ
+အတိုင်း install လုပ်ပါ-
 
     cd dblatex-0.45
     python setup.py install
 
-NOTE: Although CMake can find that you have dblatex installed, it's not
-possible for a2x to run dblatex on windows without supplying a dblatex
-executable. This can be done by placing the dblatex.cmd file from the
-CMakeSupport/windows directory in your path and modifying it as necessary.
+NOTE: CMake သည် dblatex install ထားကြောင်း ရှာတွေ့နိုင်သော်လည်း၊ a2x
+အနေဖြင့် dblatex executable ကို မပေးဘဲ Windows ပေါ်တွင် dblatex ကို run
+ရန် မဖြစ်နိုင်ပါ။ ၎င်းကို CMakeSupport/windows directory ရှိ dblatex.cmd
+file ကို သင်၏ path တွင် ထားရှိပြီး လိုအပ်သလို ပြင်ဆင်ခြင်းဖြင့်
+ဆောင်ရွက်နိုင်ပါသည်။
 
-So long as the install works, CMake will be able to find dblatex in your
-python installation
+install အောင်မြင်သ၍ CMake သည် သင်၏ python installation ထဲမှ dblatex ကို
+ရှာတွေ့နိုင်ပါလိမ့်မည်
 
 == FOP
 
-NOTE: This is currently the only way of building PDF documents on Windows.
+NOTE: ၎င်းသည် လက်ရှိအချိန်တွင် Windows ပေါ်တွင် PDF document များ build
+လုပ်ရန် တစ်ခုတည်းသော နည်းလမ်း ဖြစ်ပါသည်။
 
-It's possible to use https://xmlgraphics.apache.org/fop/[Apache FOP] for PDF
-generation with AsciiDoc instead of dbaltex. Some people will prefer the
-output of Apache FOP compared to dblatex. It brings with it a dependency on
-a Java runtime.
+AsciiDoc နှင့်အတူ PDF generation အတွက် dblatex အစား
+https://xmlgraphics.apache.org/fop/[Apache FOP] ကို အသုံးပြုနိုင်ပါသည်။
+အချို့သူများသည် dblatex ထက် Apache FOP ၏ output ကို ပို၍ နှစ်သက်ကြပါသည်။
+၎င်းသည် Java runtime အပေါ် dependency တစ်ခု ပါလာပါသည်။
 
-In order for CMake to use FOP, use the following when configuring with CMake:
+CMake ကို FOP အသုံးပြုစေရန် CMake ဖြင့် configure လုပ်စဉ် အောက်ပါအတိုင်း
+အသုံးပြုပါ-
 
     -DPDF_GENERATOR=FOP
