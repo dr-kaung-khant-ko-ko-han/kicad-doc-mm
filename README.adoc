@@ -1,7 +1,7 @@
-KiCad Documentation
+KiCad စာရွက်စာတမ်းများ
 ===================
 
-This repository contains the official link:http://www.kicad-pcb.org/[KiCad] documentation.
+ဤ repository တွင် တရားဝင် link:http://www.kicad-pcb.org/[KiCad] စာရွက်စာတမ်းများ ပါဝင်ပါသည်။
 
 image:http://ci.kicad-pcb.org/buildStatus/icon?job=any-kicad-doc-head["Build Status",
 link="http://ci.kicad-pcb.org/job/any-kicad-doc-head/"]
@@ -10,46 +10,33 @@ link="http://docs.kicad-pcb.org/"]
 image:https://img.shields.io/badge/docs-nightly-lightgrey.svg["Nightly docs",
 link="http://ci.kicad-pcb.org/job/any-kicad-doc-head/lastSuccessfulBuild/artifact/src/"]
 
-== Contributing
+== ပါဝင်ကူညီခြင်း (Contributing)
 
-You can discuss the documentation and its translations in the
-link:https://github.com/KiCad/kicad-doc/issues[repository issues].
+စာရွက်စာတမ်းနှင့် ၎င်း၏ ဘာသာပြန်ချက်များအကြောင်းကို link:https://github.com/KiCad/kicad-doc/issues[repository issues] တွင် ဆွေးနွေးနိုင်ပါသည်။
 
-To participate to the translation effort read the link:translation_instructions.adoc[]. +
-Submit your translation pull requests to the master branch, please. +
-See link:docs-versioning.adoc[] for details about docs versioning.
+ဘာသာပြန်ဆိုမှု လုပ်ငန်းစဉ်တွင် ပါဝင်လိုပါက link:translation_instructions.adoc[] ကို ဖတ်ရှုပါ။ +
+သင်၏ ဘာသာပြန် pull request များကို master branch သို့ တင်သွင်းပေးပါ။ +
+docs versioning အကြောင်း အသေးစိတ်ကို link:docs-versioning.adoc[] တွင် ကြည့်ရှုပါ။
 
-The following instructions explain how to test changes before
-link:https://github.com/KiCad/kicad-doc/fork[submitting a pull-request].
+link:https://github.com/KiCad/kicad-doc/fork[pull-request တင်သွင်းခြင်း] မပြုမီ အပြောင်းအလဲများကို မည်သို့ စမ်းသပ်ရမည်ကို အောက်ပါညွှန်ကြားချက်များတွင် ရှင်းပြထားပါသည်။
 
-== Dependencies
+== လိုအပ်ချက်များ (Dependencies)
 
-* http://asciidoc.org/[AsciiDoc] >= 8.6.9 is both the language of the
-documentation and the tool used to generate the PDF and HTML outputs.
+* http://asciidoc.org/[AsciiDoc] >= 8.6.9 သည် စာရွက်စာတမ်း၏ ဘာသာစကားဖြစ်သည့်အပြင် PDF နှင့် HTML output များကို ထုတ်လုပ်ရန် အသုံးပြုသည့် tool လည်း ဖြစ်ပါသည်။
 
-We will probably switch to http://asciidoctor.org/[asciidoctor] in the future,
-when asciidoctor tools are stable enough, because of their ability to generate PDF
-and epub document formats directly without the intervention of any other external
-tool or intermediate format like dblatex or docbook. See the
-http://asciidoctor.org/docs/convert-asciidoc-to-pdf/[asciidoctor-pdf] project.
+dblatex သို့မဟုတ် docbook ကဲ့သို့သော အခြား external tool သို့မဟုတ် intermediate format တစ်ခုမျှ မလိုအပ်ဘဲ PDF နှင့် epub စာရွက်စာတမ်း format များကို တိုက်ရိုက် ထုတ်လုပ်နိုင်စွမ်း ရှိသဖြင့်၊ http://asciidoctor.org/[asciidoctor] tool များ လုံလောက်စွာ တည်ငြိမ်လာသောအခါ နောင်တွင် ၎င်းသို့ ပြောင်းလဲအသုံးပြုနိုင်ဖွယ် ရှိပါသည်။ http://asciidoctor.org/docs/convert-asciidoc-to-pdf/[asciidoctor-pdf] project ကို ကြည့်ရှုပါ။
 
-* https://po4a.alioth.debian.org/[po4a] >= 0.45 is used to translate the English
-AsciiDoc documentation to other languages before the last compilation steps.
+* https://po4a.alioth.debian.org/[po4a] >= 0.45 ကို compilation အဆင့် နောက်ဆုံးမတိုင်မီ၊ အင်္ဂလိပ်ဘာသာဖြင့် ရေးသားထားသော AsciiDoc စာရွက်စာတမ်းများကို အခြားဘာသာစကားများသို့ ဘာသာပြန်ရန် အသုံးပြုပါသည်။
 * CMake >= 2.8
 * dblatex >= 0.3.4
 * gettext >= 0.18
 * source-highlight
-* The _VL Gothic_ font is required when you build the Japanese PDFs. Look for a
-package named `fonts-vlgothic`. Otherwise use the **LANGUAGES** option
-to avoid build errors.
-* For building PDF files with Cyrillic characters (like Russian) the fonts
-package _freefont-ttf_ is required, so you will need to look for similar named
-package.
+* ဂျပန်ဘာသာ PDF များ build လုပ်သည့်အခါ _VL Gothic_ font လိုအပ်ပါသည်။ `fonts-vlgothic` ဟု အမည်ပေးထားသည့် package ကို ရှာဖွေပါ။ သို့မဟုတ်ပါက build error များကို ရှောင်ရှားရန် **LANGUAGES** option ကို အသုံးပြုပါ။
+* ဆိုင်ရီလစ် (Cyrillic) စာလုံးများ (ရုရှားဘာသာကဲ့သို့) ပါဝင်သည့် PDF ဖိုင်များ build လုပ်ရန်အတွက် _freefont-ttf_ fonts package လိုအပ်ပါသည်။ ထို့ကြောင့် အလားတူအမည်ရှိသည့် package ကို ရှာဖွေရန် လိုအပ်ပါမည်။
 
 === Debian / Ubuntu
 
-To install the dependencies on Debian / Ubuntu run the following (requires
-about 1.5GiB of space):
+Debian / Ubuntu တွင် dependencies များကို install လုပ်ရန် အောက်ပါအတိုင်း run ပါ (space 1.5GiB ခန့် လိုအပ်ပါသည်)-
 
     sudo apt-get install asciidoc cmake dblatex fonts-freefont-ttf \
     fonts-vlgothic gettext git make po4a source-highlight \
@@ -59,13 +46,11 @@ about 1.5GiB of space):
     texlive-lang-spanish texlive-xetex texlive-lang-chinese \
     libunicode-linebreak-perl
 
-NOTE: Debian Jessie and Ubuntu 16.04 LTS has no package
-texlive-lang-european, install the package texlive-lang-dutch instead.
+NOTE: Debian Jessie နှင့် Ubuntu 16.04 LTS တွင် texlive-lang-european package မရှိပါ၊ ၎င်းအစား texlive-lang-dutch package ကို install လုပ်ပါ။
 
-NOTE: in Ubuntu 14.04 LTS there is no texlive-lang-japanese. Install
-texlive-lang-cjk instead.
+NOTE: Ubuntu 14.04 LTS တွင် texlive-lang-japanese မရှိပါ။ ၎င်းအစား texlive-lang-cjk ကို install လုပ်ပါ။
 
-or, if you do not have space problems:
+သို့မဟုတ် space ပြဿနာ မရှိပါက-
 
     sudo apt-get install asciidoc cmake dblatex fonts-freefont-ttf \
     fonts-vlgothic gettext git make po4a source-highlight \
@@ -73,7 +58,7 @@ or, if you do not have space problems:
 
 === Fedora
 
-To install the dependencies on Fedora run the following:
+Fedora တွင် dependencies များကို install လုပ်ရန် အောက်ပါအတိုင်း run ပါ-
 
     sudo dnf install git make cmake asciidoc gettext po4a dblatex \
     source-highlight texlive vlgothic-fonts perl-Unicode-LineBreak \
@@ -82,22 +67,22 @@ To install the dependencies on Fedora run the following:
 
 === Manjaro Linux
 
-To install the dependencies on Manjaro run the following:
+Manjaro တွင် dependencies များကို install လုပ်ရန် အောက်ပါအတိုင်း run ပါ-
 
 	sudo  pacman -S asciidoc cmake dblatex ttf-freefont gettext \
 	po4a source-highlight  texlive-langchinese texlive-langcyrillic \
 	texlive-langjapanese texlive-langextra texlive-langkorean \
 	texlive-langgreek perl-unicode-linebreak
 
-NOTE: AUR package
+NOTE: AUR package ဖြစ်သည်
 
 	yaourt -S ttf-vlgothic
 
-== Building the docs
+== စာရွက်စာတမ်းများ Build လုပ်ခြင်း (Building the docs)
 
 === Windows
 
-Start with link:windows_dependencies.adoc[] then run:
+link:windows_dependencies.adoc[] ဖြင့် စတင်ပြီး အောက်ပါအတိုင်း run ပါ-
 
     cd kicad-doc
     mkdir build
@@ -114,61 +99,49 @@ Start with link:windows_dependencies.adoc[] then run:
     make
 
 === Docker
-Read link:utils/docker/README.adoc[] if you want to build the documentation in a container.
+Container တစ်ခုအတွင်း စာရွက်စာတမ်းကို build လုပ်လိုပါက link:utils/docker/README.adoc[] ကို ဖတ်ရှုပါ။
 
-=== CMake Build Options
+=== CMake Build Options (တည်ဆောက်မှု ရွေးချယ်စရာများ)
 
 ==== BUILD_FORMATS
 
-By default **BUILD_FORMATS** is set to `"html;pdf;epub"` to enable building all supported
-document formats.
+ပုံမှန်အားဖြင့် **BUILD_FORMATS** ကို document format များအားလုံးကို build လုပ်နိုင်ရန် `"html;pdf;epub"` ဟု သတ်မှတ်ထားပါသည်။
 
-It's possible to set **BUILD_FORMATS** in order to build only a subset of formats,
-e.g. `-DBUILD_FORMATS=html`
+format တစ်စိတ်တစ်ပိုင်းသာ build လုပ်လိုပါက **BUILD_FORMATS** ကို သတ်မှတ်နိုင်ပါသည်၊ ဥပမာ- `-DBUILD_FORMATS=html`
 
-When only one build format is enabled the package name is transformed to include
-the format.
+format တစ်ခုတည်းကိုသာ enable ထားပါက package အမည်တွင် ထို format ပါဝင်အောင် ပြောင်းလဲပေးပါသည်။
 
 ==== LANGUAGES
 
-By default CMake will configure to build all languages available for each document.
+ပုံမှန်အားဖြင့် CMake သည် စာရွက်စာတမ်းတစ်ခုစီအတွက် ရရှိနိုင်သော ဘာသာစကားအားလုံးကို build လုပ်ရန် configure လုပ်ပါသည်။
 
-You can build just one or some of the languages by using the **LANGUAGES** option
-when configuring a build with CMake, e.g. `-DLANGUAGES="it;en;de"`, etc.
+CMake ဖြင့် build ပြုလုပ်စဉ် **LANGUAGES** option ကို အသုံးပြုခြင်းဖြင့် ဘာသာစကား တစ်ခု သို့မဟုတ် အချို့ကိုသာ build လုပ်နိုင်ပါသည်၊ ဥပမာ- `-DLANGUAGES="it;en;de"` စသည်ဖြင့်။
 
-Currently, the available languages are : `ca`, `de`, `en`, `es`, `fr`, `id`,
-`it`, `ja`, `pl`, `ru`  and `zh`, however, any language code can be selected.
-Only translated documents will be built, so for some languages there may only
-be a partial documentation output.
+လက်ရှိတွင် ရရှိနိုင်သော ဘာသာစကားများမှာ `ca`, `de`, `en`, `es`, `fr`, `id`, `it`, `ja`, `pl`, `ru` နှင့် `zh` တို့ ဖြစ်ကြသော်လည်း၊ ဘာသာစကား code မည်သည်ကိုမဆို ရွေးချယ်နိုင်ပါသည်။ ဘာသာပြန်ပြီးသား စာရွက်စာတမ်းများသာ build လုပ်မည်ဖြစ်၍ ဘာသာစကားအချို့အတွက် စာရွက်စာတမ်း တစ်စိတ်တစ်ပိုင်းသာ ထွက်ရှိနိုင်ပါသည်။
 
 ==== SINGLE_LANGUAGE
 
-This option is deprecated, use **LANGUAGES** instead
+ဤ option သည် deprecated ဖြစ်ပြီး ၎င်းအစား **LANGUAGES** ကို အသုံးပြုပါ
 
 ==== PDF_GENERATOR
 
-By default CMake will use dblatex building PDFs.
+ပုံမှန်အားဖြင့် CMake သည် PDF များ build လုပ်ရန် dblatex ကို အသုံးပြုပါသည်။
 
-You can build PDFs however using either `DBLATEX` or `FOP` by using the
-**PDF_GENERATOR** option whilst configuring a CMake build.
+CMake build ကို configure လုပ်စဉ် **PDF_GENERATOR** option ကို အသုံးပြုခြင်းဖြင့် DBLATEX သို့မဟုတ် FOP ကို ရွေးချယ်၍ PDF များ build လုပ်နိုင်ပါသည်။
 
-For example, use `-DPDF_GENERATOR=FOP` to use FOP to build the PDFs. If the
-**BUILD_FORMATS** option doesn't include `pdf`, the **PDF_GENERATOR** option
-will have no effect on the build.
+ဥပမာအားဖြင့်၊ PDF များ build လုပ်ရန် FOP ကို အသုံးပြုလိုပါက `-DPDF_GENERATOR=FOP` ဟု ရေးပါ။ **BUILD_FORMATS** option တွင် `pdf` ပါဝင်ခြင်း မရှိပါက **PDF_GENERATOR** option သည် build အပေါ် သက်ရောက်မှု ရှိမည် မဟုတ်ပါ။
 
-This option doesn't transform the built package name.
+ဤ option သည် build လုပ်ထားသော package အမည်ကို ပြောင်းလဲပေးမည် မဟုတ်ပါ။
 
-=== Packaging the docs
-The docs use CMake as mentioned earlier, so to install it as a packager use the
-normal CMake way, for example:
+=== စာရွက်စာတမ်းများကို Package ပြုလုပ်ခြင်း (Packaging the docs)
+စာရွက်စာတမ်းများသည် အထက်တွင် ဖော်ပြခဲ့သည့်အတိုင်း CMake ကို အသုံးပြုသဖြင့်၊ packager တစ်ဦးအနေဖြင့် install ပြုလုပ်ရန် ပုံမှန် CMake နည်းလမ်းကို အသုံးပြုပါ၊ ဥပမာ-
 
     mkdir build; cd build
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make install
 
-And if on OS X you might want something like:
+OS X တွင်ဖြစ်ပါက အောက်ပါကဲ့သို့ လိုချင်နိုင်ပါသည်-
 
     mkdir build; cd build
     cmake -DCMAKE_INSTALL_PREFIX="/Library/Application Support/kicad" ..
     make install
-
