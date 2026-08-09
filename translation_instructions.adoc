@@ -1,25 +1,27 @@
-KiCad documentation translation
+KiCad စာရွက်စာတမ်း ဘာသာပြန်ခြင်း
 ===============================
 
-== Starting a translation from scratch
+== အစအဆုံး ဘာသာပြန်ခြင်း စတင်ခြင်း (Starting a translation from scratch)
 
-To start translating the KiCad documentation in a new language, follow these steps:
+KiCad စာရွက်စာတမ်းကို ဘာသာစကားအသစ်တစ်ခုဖြင့် ဘာသာပြန်စတင်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ-
 
-1) read the README.adoc for the preliminary requirements
+1) ကြိုတင်လိုအပ်ချက်များအတွက် README.adoc ကို ဖတ်ရှုပါ
 
-2) create your language addendum. Do a:
+2) သင်၏ ဘာသာစကား addendum ကို ဖန်တီးပါ။ အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
  cp src/YOUR-CHOSEN-MANUAL/po/addendum.template src/YOUR-CHOSEN-MANUAL/po/addendum.NN
 
-where NN is the i18n language code and YOUR-CHOSEN-MANUAL is the name of
-the manual dir. For example, for "Getting Started in KiCad" in German do:
+ဤနေရာတွင် NN သည် i18n ဘာသာစကား code ဖြစ်ပြီး YOUR-CHOSEN-MANUAL သည် manual
+directory ၏ အမည် ဖြစ်ပါသည်။ ဥပမာအားဖြင့် "Getting Started in KiCad" ကို
+ဂျာမန်ဘာသာဖြင့် ပြန်ဆိုမည်ဆိုပါက-
 
  cp src/getting_started_in_kicad/po/addendum.template src/getting_started_in_kicad/po/addendum.de
 
-Edit, translate and add your name to the nationalized addendum for your
-credit as a translator.
+ဘာသာပြန်သူအနေဖြင့် သင်၏ အားထုတ်မှုကို အသိအမှတ်ပြုနိုင်ရန် nationalized
+addendum ကို ပြင်ဆင်၊ ဘာသာပြန်ပြီး သင့်အမည်ကို ထည့်သွင်းပါ။
 
-3) then, for creating your language template, you _should_ do this:
+3) ထို့နောက် သင်၏ ဘာသာစကား template ကို ဖန်တီးရန် အောက်ပါအတိုင်း
+_လုပ်သင့်_ ပါသည်-
 
  touch src/YOUR-CHOSEN-MANUAL/po/NN.po
  mkdir build
@@ -27,11 +29,11 @@ credit as a translator.
  cmake ..
  make YOUR-CHOSEN-MANUAL_updatepo_NN
 
-where, again, YOUR-CHOSEN-MANUAL is the name of the manual dir, for
-example "getting_started_in_kicad" and NN is your i18n language code.
+ဤနေရာတွင်လည်း YOUR-CHOSEN-MANUAL သည် manual directory ၏ အမည် ဖြစ်ပြီး
+(ဥပမာ "getting_started_in_kicad") NN သည် သင်၏ i18n ဘာသာစကား code ဖြစ်ပါသည်။
 
-If last command should not work for any reason, it is still possible
-to use the old scripts procedure:
+နောက်ဆုံး command သည် မည်သည့်အကြောင်းကြောင့်မဆို အလုပ်မလုပ်ပါက၊ ရှေးဟောင်း
+script procedure ကိုလည်း အသုံးပြုနိုင်ပါသေးသည်-
 
  rm -rf build/*
  cd src/YOUR-CHOSEN-MANUAL
@@ -39,138 +41,147 @@ to use the old scripts procedure:
  cd ../../build
  cmake ..
 
-Edit the resulting ../src/YOUR-CHOSEN-MANUAL/po/NN.po file, starting from
-the headers, using a specialized po editor of your choice like poedit,
-gtranslator, virtaal, lokalize, emacs, vi, or others.
-For example do:
+ရလဒ်အနေဖြင့်ရရှိလာသော ../src/YOUR-CHOSEN-MANUAL/po/NN.po file ကို header
+များမှ စတင်၍ poedit, gtranslator, virtaal, lokalize, emacs, vi စသည့်
+သင်နှစ်သက်ရာ po editor အထူးတစ်ခုဖြင့် ပြင်ဆင်ပါ။ ဥပမာအားဖြင့်-
 
  poedit ../src/getting_started_in_kicad/po/de.po
 
-4) try your translation with a:
+4) သင်၏ ဘာသာပြန်ချက်ကို အောက်ပါအတိုင်း စမ်းသပ်ကြည့်ပါ-
 
  make YOUR-CHOSEN-MANUAL_html_NN
 
-For example:
+ဥပမာအားဖြင့်-
 
  make cvpcb_html_it
 
-And see the results with a browser:
+ထို့နောက် browser ဖြင့် ရလဒ်ကို ကြည့်ရှုပါ-
 
  firefox src/cvpcb/it/cvpcb.html
 
-NOTE: you can try other formats like pdf or epub as well. HTML is just
-the fastest to build.
+NOTE: pdf သို့မဟုတ် epub ကဲ့သို့သော အခြား format များကိုလည်း စမ်းသပ်နိုင်
+ပါသည်။ HTML သည် build လုပ်ရန် အမြန်ဆုံးဖြစ်ပါသည်။
 
-NOTE: before commit any result it is recommended to try the other
-formats like pdf and epub. These formats sometimes trigger errors that
-the other build processes may not see. These errors should never reach
-the repository since they may block the site automatic compilation of
-the different formats.
+NOTE: ရလဒ်တစ်ခုခုကို commit မလုပ်မီ pdf နှင့် epub ကဲ့သို့သော အခြား
+format များကိုပါ စမ်းသပ်ရန် အကြံပြုပါသည်။ ဤ format များသည် အခြား build
+process များ မတွေ့နိုင်သော error များကို တစ်ခါတစ်ရံ ဖြစ်ပေါ်စေနိုင်ပါသည်။
+ဤ error များသည် format အမျိုးမျိုး၏ site အလိုအလျောက် compilation ကို
+ပိတ်ဆို့နိုင်သဖြင့် repository ထဲသို့ လုံးဝ မရောက်ရှိသင့်ပါ။
 
-5) when you reach 100% of the translation, or simply when you think you
-   have done enough work, test your work trying to compile it in the
-   various formats. When there are no errors, create a patch with:
+5) ဘာသာပြန်ဆိုမှု 100% ရောက်ရှိသောအခါ၊ သို့မဟုတ် လုံလောက်စွာ
+လုပ်ဆောင်ပြီးပြီဟု ယူဆသည့်အခါ format အမျိုးမျိုးဖြင့် compile
+ပြုလုပ်ကြည့်ပြီး သင်၏ လုပ်ဆောင်ချက်ကို စမ်းသပ်ပါ။ error များ မရှိပါက
+အောက်ပါအတိုင်း patch တစ်ခု ဖန်တီးပါ-
 
  cd ..
  git add src/YOUR-CHOSEN-MANUAL/po/addendum.NN src/YOUR-CHOSEN-MANUAL/po/NN.po
  git commit -m "Added translation for LANGUAGE"
  git format-patch HEAD^
 
-and submit a pull-request on Github.
+ထို့နောက် Github တွင် pull-request တင်သွင်းပါ။
 
 [NOTE]
 ====
-To do the equivalent of a "make clean" just delete recursively the
-content of the build dir with:
+"make clean" နှင့် ညီမျှသော လုပ်ဆောင်ချက်ကို ပြုလုပ်ရန် build directory
+၏ အကြောင်းအရာများကို အောက်ပါအတိုင်း recursively ဖျက်လိုက်ရုံပါပဲ-
 
  rm -rf build/*
 
 ====
 
 
-== Translating more than one doc branch at a time
+== တစ်ချိန်တည်းတွင် doc branch တစ်ခုထက်ပို၍ ဘာသာပြန်ခြင်း (Translating more than one doc branch at a time)
 
-With the new branching policy of KiCad documentation, life could be
-hard, especially if the stable branch of the documentation in your
-tongue is not already completed.
+KiCad စာရွက်စာတမ်း၏ branching policy အသစ်နှင့်အတူ၊ အထူးသဖြင့် သင်၏
+ဘာသာစကားဖြင့် stable branch စာရွက်စာတမ်းကို လက်ရှိအချိန်တွင်
+မပြီးမြောက်သေးပါက အခက်အခဲများ ကြုံတွေ့ရနိုင်ပါသည်။
 
 
-In this case you would want to translate the stable branch of the
-documentation and add all unupdated strings and screenshots to the
-development ``rolling'' branch.
+ဤကိစ္စတွင် stable branch စာရွက်စာတမ်းကို ဘာသာပြန်ပြီး update
+မလုပ်ရသေးသော string များနှင့် screenshot များအားလုံးကို development
+``rolling'' branch ထဲသို့ ထည့်သွင်းလိုပေမည်။
 
-Git has this beautiful command that is ``cherry-pick''. This command
-enable the user to pick a commit from a branch and apply this commit to
-another.
+Git တွင် ``cherry-pick'' ဟု ခေါ်သော လှပသည့် command တစ်ခု ရှိပါသည်။ ဤ
+command သည် user အား branch တစ်ခုမှ commit တစ်ခုကို ရွေးချယ်ပြီး
+အခြား branch တစ်ခုတွင် အသုံးချနိုင်စေပါသည်။
 
-What we want to do is to translate and commit the translation update on
-the stable branch of the documentation and then pick this commit and
-apply it to the new dev branch of the documentation. 
+ကျွန်ုပ်တို့ လုပ်ဆောင်လိုသည်မှာ stable branch စာရွက်စာတမ်းတွင်
+ဘာသာပြန် update ကို ဘာသာပြန်၍ commit လုပ်ပြီး ထို commit ကို ရွေးချယ်
+(pick) ကာ documentation ၏ dev branch အသစ်တွင် အသုံးချရန် ဖြစ်ပါသည်။
 
-Then, let the gettext suite commands purge the modified strings but
-keeping the unchanged ones.
+ထို့နောက် ပြောင်းလဲထားသော string များကို ဖယ်ရှားပြီး မပြောင်းလဲသေးသော
+string များကိုမူ ထိန်းသိမ်းထားရန် gettext suite command များကို
+အသုံးပြုပါ။
 
-This is all wonderful but sadly the merge command does not work well with 
-`.po` files due to the large percent of comments that change with trivial
-changes in source making the merge conflicts something neare a nightmare.
+ဒါအားလုံးက အံ့ဖွယ်ကောင်းပေမယ့် ဝမ်းနည်းစရာက merge command သည် `.po`
+file များနှင့် ကောင်းစွာ အလုပ်မလုပ်ပါ။ အကြောင်းမှာ source တွင်
+အသေးအဖွဲ ပြောင်းလဲမှုများနှင့်အတူ comment အများစု ပြောင်းလဲသွားတတ်
+သဖြင့် merge conflict များသည် အိပ်မက်ဆိုးတစ်ခုနှင့် နီးစပ်လာပါသည်။
 
-Again, the flexibility of git saves our days of works letting to
-customize the merge in a file-type per file-type basis.
+သို့သော်လည်း git ၏ ပြောင်းလွယ်ပြင်လွယ်မှုက file-type တစ်ခုစီအလိုက်
+merge ကို customize လုပ်နိုင်စေခြင်းအားဖြင့် ကျွန်ုပ်တို့၏ အလုပ်ရက်
+များစွာကို ကယ်တင်ပေးပါသည်။
 
-All we have to do is to tell git to use a special po aware merge command
-instead of the classic one: this is what po-merge is for. po-merge is
-part of the https://github.com/mezis/git-whistles[git-whistles] and under
-Linux is installable with just:
+ကျွန်ုပ်တို့ လုပ်ဆောင်ရမည့်အရာမှာ classic merge command အစား po ကို
+သိရှိနားလည်သော special merge command ကို အသုံးပြုရန် git ကို
+ပြောပြရုံပါပဲ- ၎င်းအတွက်ဖြစ်ပါသည် po-merge ကို။ po-merge သည်
+https://github.com/mezis/git-whistles[git-whistles] ၏ အစိတ်အပိုင်းတစ်ခု
+ဖြစ်ပြီး Linux တွင် အောက်ပါအတိုင်း install လုပ်နိုင်ပါသည်-
 
  sudo gem install git-whistles
 
 [NOTE]
 ====
 
-Please note that (actual stable, at the time of writing) 1.1.3 version of
-git-whistles have a small but fastidious bug. If you see a message like
-this:
+git-whistles ၏ version 1.1.3 (ဤစာရွက်စာတမ်း ရေးသားချိန်တွင် stable
+version ဖြစ်သည်) တွင် သေးငယ်ပေမယ့် စိတ်အနှောင့်အယှက် ဖြစ်စေသော bug
+တစ်ခု ရှိကြောင်း သတိပြုပါ။ အောက်ပါကဲ့သို့ message တစ်ခု တွေ့ရပါက-
 
  git merge-po
  trap: ERR: bad trap
 
-then what you all have to do is to change the first line of 
+ထိုအခါ
 
  /var/lib/gems/2.3.0/gems/git-whistles-1.1.3/libexec/git-merge-po.sh 
 
-from
+၏ ပထမဆုံးလိုင်းကို
 
  #!/bin/sh
 
-to
+မှ
 
  #!/bin/bash
 
+သို့ ပြောင်းလဲပေးရန် လိုအပ်ပါသည်။
+
 ====
 
-If some errors arise, try updating gem first:
+error အချို့ ဖြစ်ပေါ်ပါက အရင်ဆုံး gem ကို update လုပ်ကြည့်ပါ-
 
  sudo gem update --system
 
-and then retry the installation. Then you will have a new command:
+ထို့နောက် installation ကို ထပ်မံစမ်းသပ်ပါ။ ထိုအခါ command အသစ်တစ်ခု
+ရရှိလာပါမည်-
 
  git merge-po <ancestor> <left> <right>
 
-But you don't have to call this directly, you just have to configure your
-git environment: add this to your .git/config:
+သို့သော် ၎င်းကို တိုက်ရိုက် ခေါ်ဆိုရန် မလိုအပ်ပါ၊ သင်၏ git environment
+ကို configure လုပ်ရုံသာ လိုအပ်ပါသည်- သင်၏ .git/config ထဲသို့ အောက်ပါ
+အရာများ ထည့်သွင်းပါ-
 
   [merge "pofile"]
     name = Gettext merge driver
     driver = git merge-po %O %A %B
 
-and add this to .gitattributes or .git/info/attributes:
+ထို့နောက် .gitattributes သို့မဟုတ် .git/info/attributes ထဲသို့ အောက်ပါ
+အရာများ ထည့်သွင်းပါ-
 
   *.po   merge=pofile
   *.pot  merge=pofile
 
-Or globally
+သို့မဟုတ် global အနေဖြင့်
 
-Add to ~/.gitconfig:
+~/.gitconfig ထဲသို့ ထည့်သွင်းပါ-
 
   [core]
     attributesfile = ~/.gitattributes
@@ -178,23 +189,23 @@ Add to ~/.gitconfig:
     name = Gettext merge driver
     driver = git merge-po %O %A %B
 
-Create ~/.gitattributes:
+~/.gitattributes ကို ဖန်တီးပါ-
 
   *.po   merge=pofile
   *.pot  merge=pofile
 
-Then try:
+ထို့နောက် အောက်ပါအတိုင်း စမ်းကြည့်ပါ-
 
  git checkout 4.0
  git add ...
  git commit -m "Translation update..." 
 
-write down the commit hash or check it with `git log`
+commit hash ကို မှတ်ထားပါ၊ သို့မဟုတ် `git log` ဖြင့် စစ်ဆေးနိုင်ပါသည်
 
  git push
  git checkout master
  git cherry-pick <commit>
 
-Done!
+ပြီးပါပြီ!
 
-Happy translation!
+ဘာသာပြန်ရတာ ပျော်ရွှင်ပါစေ!
