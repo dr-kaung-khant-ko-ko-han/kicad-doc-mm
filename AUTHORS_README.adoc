@@ -1,39 +1,27 @@
-README for doc authors
+စာရွက်စာတမ်း ရေးသားသူများအတွက် README
 ======================
+စာရွက်စာတမ်းအသစ်တစ်ခု ရေးသားစတင်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ-
 
-To start writing a new document, follow these steps:
-
-1) read the README.adoc for the preliminary requirements.
-
-2) create a directory with the same name of the doc title lowercase
-with underscore for space.
-
-3) copy a master document from other docs to simplify coherency and
-change whatever needs to be changed.
-
-4) follow the convention to call the name of the document with the same
-name of the doc project dir
-
-5) if the document is rather large and you want to break it into separate
-chapters, follow the convention of calling the chapter files as:
-
+1) ကြိုတင်လိုအပ်ချက်များအတွက် README.adoc ကို ဖတ်ရှုပါ။
+2) doc ခေါင်းစဉ်အမည်နှင့် တူညီသော directory တစ်ခုကို lowercase ဖြင့် ဖန်တီးပါ၊
+space နေရာတွင် underscore (_) ကို အသုံးပြုပါ။
+3) တသမတ်တည်း ဖြစ်စေရန် အခြား docs များမှ master document တစ်ခုကို copy
+ကူးယူပြီး လိုအပ်သလို ပြင်ဆင်ပါ။
+4) document အမည်ကို doc project directory အမည်နှင့် တူညီအောင် ခေါ်ဆိုသည့်
+convention ကို လိုက်နာပါ
+5) document သည် အတော်လေး ကြီးမားပြီး သီးခြား chapter များအဖြစ် ခွဲခြားလိုပါက
+chapter file များကို အောက်ပါအတိုင်း အမည်ပေးသည့် convention ကို လိုက်နာပါ-
  docname_chapter_name-or-number.adoc
-
-The first _ character will separate the docname from the chapter names
-and will guarantee automatic inclusion of the chapters into the final
-output formats.
-
-6) when you reach a worthwhile point on your document, create a patch with:
-
+ပထမဆုံး _ စာလုံးသည် docname နှင့် chapter name ကို ပိုင်းခြားပေးမည်ဖြစ်ပြီး၊
+chapter များကို နောက်ဆုံး output format များထဲသို့ အလိုအလျောက် ထည့်သွင်းနိုင်ရန်
+အာမခံပေးပါလိမ့်မည်။
+6) document တွင် သင့်လျော်သည့် အဆင့်တစ်ခုသို့ ရောက်ရှိသောအခါ အောက်ပါအတိုင်း
+patch တစ်ခု ဖန်တီးပါ-
  git add docname
  git commit -m "Added manual docname, first draft"
  git format-patch HEAD^
-
-and send it to the devels or fork with gitbub web interface and ask for
-pull merging.
-
-Please, before committing any file, check for functionality, to avoid
-breaking automatic compilation of docs.
-
-Happy writing!
-
+ထို့နောက် ၎င်းကို devel များထံ ပေးပို့ပါ၊ သို့မဟုတ် GitHub web interface ဖြင့်
+fork ပြုလုပ်ပြီး pull merge တောင်းဆိုပါ။
+docs အလိုအလျောက် compilation ပျက်စီးမှု မဖြစ်စေရန်၊ file တစ်ခုခုကို commit
+မလုပ်မီ functionality ကို စစ်ဆေးပေးပါ။
+စာရေးရတာ ပျော်ရွှင်ပါစေ!
